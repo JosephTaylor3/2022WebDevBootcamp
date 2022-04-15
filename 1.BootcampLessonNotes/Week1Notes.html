@@ -1,0 +1,249 @@
+<!-- To see this file in the web browser, simply right-click on the title tab, and click "Open in Default Browser" -->
+
+<!-- when you start with an .html file in VS Code (can't just start without specifying a programmng language), 
+    just type "!" and hit enter, and your starting tags Doctype, html, head and body will all autopopulate 
+    to initialize the file, rather than you having to enter it all manually --> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./output_styles.css"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="html_css_icon.png" />
+    <title>Week 1 Notes</title>
+</head>
+<body>
+    <!-- hit CTRL+/ to quick comment in HTML in VS Code -->
+    <!-- I am aiming to take ALL of my notes in HTML, or which ever language is being taught, rather
+        than in OneNote, so that I can get very use to using the language -->
+    <h1 class="h-1">Bootcamp Week 1</h1>
+        <h2>1.6.) HTML Body Tags</h2>
+            <h3>Inline and Block Elements</h3>
+                <ul>
+                    <li>Tags can be separated into INLINE and BLOCK elements.</li>
+                        <ul>
+                            <li> Block elements  (<code>&lt;p&gt;</code>, <code>&lt;div&gt;</code>, heading elements, lists and list items, and others) 
+                                when positioned in the page do not allow other elements to be visualized next to 
+                                them. Inline elements instead can sit next to other inline elements. Another 
+                                difference is that inline elements can be contained in block elements. The reverse
+                                is not true.
+                            </li>
+                                <ul>
+                                    <li> Example: Inside a <code>&lt;p&gt;</code> tag, we can add any inline element we like, like <code>&lt;span&gt;</code>. </li>
+                                    <li> We cannot add other block elements into a <code>&lt;p&gt;</code> or <code>&lt;span&gt;</code> tag. </li>
+                                    <li> We cannot nest a <code>&lt;p&gt;</code> element into another one, as <code>&lt;p&gt;</code> is a block tag. </li>
+                                </ul>
+                        </ul>
+                </ul>
+
+            <h3>Links</h3>
+                <p>Links are defined using the <code>&lt;a&gt;</code> tag. The link destination is set via its <code>href</code> attribute.</p>
+                <p>Link tags can include any other element inside of it, except for another <code>&lt;a&gt;</code> tag. </p>
+            <h3>Attributes</h3>
+                <ul>
+                    <li>Attributes have the <code>key="value"</code> syntax.</li>
+                    <li>And some attributes are boolean, meaning you only need the key.</li>
+                    <li>The <code>class</code> and <code>id</code> attributes are two of the most common you will find used.</li>
+                    <ul>
+                        <li>The difference between the two is that an <code>id</code> is unique in the context of a web page; it cannot be duplicated.
+                            Classes, on the other hand, can appear multiple times on multiple elements.
+                            Plus, an <code>id</code> is just one value. <code>class</code> can hold multiple values, separated by a space:
+                        </li>
+                        <p> 
+                            <code> &lt;p class="class-1 class-2 another-class" &gt;
+                                A paragraph of text 
+                            &lt;/p&gt; </code>
+                        </p>
+                    </ul>
+                </ul>
+            <h3>Images</h3>
+                <p>The HTML standard for image elements requires an alt attribute to be present, to describe the image. 
+                    This is used by screen readers and also by search engine bots:</p>
+                    <p><code> &lt;img src="dog.png" alt="A picture of a dog" /&gt;</code></p>
+            <h3>Container Tags</h3>
+                <p>HTML provides a set of container tags. Those are block tags that can contain other tags, and are used to organize the 
+                    information on a page.</p>
+                <p>The tags are:</p>
+                <ul>
+                    <li><code>&lt;article&gt;</code> identifies a thing that can be independent from other things in a page.</li>
+                    <li><code>&lt;section&gt;</code> represents a section of a long article. Each section has a heading tag (h1-h6), then the section content.</li>
+                    <li><code>&lt;div&gt;</code> is the generic container element. It's the one we use when we don't have another dedicated container tag like <code>&lt;article&gt;</code>.</li>
+                    <li><code>&lt;nav&gt;</code> is used to create the markup that defines the page navigation or site menu. Into this we typically add an ul or ol list of links to other sections of the website or page.</li>
+                    <li><code>&lt;aside&gt;</code> is used to add a piece of content that is related to the main content; a quote or sidebar perhaps. Using <code>&lt;aside&gt;</code> is a signal that the things it contains are not part of the regular flow of the section it lives into.</li>
+                    <li><code>&lt;header&gt;</code>  represents a part of the page that is the introduction.</li>
+                    <li><code>&lt;main&gt;</code> represents the main part of a page.</li>
+                    <li><code>&lt;footer&gt;</code> is used to determine the footer of an article, or the footer of the page.</li>
+                </ul>
+
+        <h2>1.7.) HTML Head Tags </h2>
+            <p>The <code>&lt;head&gt;</code> tag always appears right after the opening html tag and before the <code>&lt;body&gt;</code> tag. 
+                The <code>&lt;head&gt;</code> tag contains special tags that define the document properties. We never use attributes on this tag.
+                And we don't write content in it.It's just a container for other tags.</p>
+                <p>The different head tags are:</p>
+                <ul>
+                    <li><code>&lt;title&gt;</code> determines the page title. The title is displayed in the browser, and it's especially 
+                        important as it's one of the key factors for Search Engine Optimization (SEO).</li>
+                    <li><code>&lt;script&gt;</code> is used to add JavaScript into the page, either inline between <code>&lt;script&gt;</code> tags,
+                        or via a <code>src</code> attribute, where <code>&lt;script src="filepath.js"&gt;&lt;/script&gt;</code>. </li>
+                    <li><code>&lt;link&gt;</code> is mainly used to link an external CSS file. It's a self-closing tag. For example, 
+                        <code>&lt;link href="file.css" rel="stylesheet" /&gt;</code>. We can also link to resources other than stylesheets, 
+                        such as links to the HTML & CSS icon that shows in the browser tab for this webpage (see the header of this .html file) </li>
+                    <li><code>&lt;style&gt;</code> can be used to add CSS styles into the document, rather than loading an external stylesheet.</li>
+                    <li><code>&lt;meta&gt;</code> tags performa a variety of tasks. The most common is the description tag, such as 
+                        <code>&lt;meta name="description" content="A nice page" /&gt;</code>. This should be used by Google to generate 
+                        the page description in its result pages, although these days its algorithm is a bit.. fancier.
+                        The charset meta tag, <code>&lt;meta charset="utf-8" /&gt;</code> is used to set the page character encoding, 
+                        which in the western world is typically set to utf-8. </li>
+                </ul>
+
+        <h2>1.8) Using Browser DevTools </h2>
+            <p>One of the important tools of the DevTools in each browser, aside from the Elements tab, is the Console. The Console serves mainly two purposes: 
+                executing JavaScript code manually, and seeing any JavaScript error reporting.</p>
+            <p>The devtools embed a very useful device emulator which you can use to visualize your page in every device size you want.</p>
+            <p>The Network tab provides information on the network requests made by the browser, and the responses that it got. It’s very useful.</p>
+        
+        <h2>1.9) Styling HTML Pages (with CSS)</h2>
+            <ul>
+                <li>CSS is a standard and it stands for Cascading Style Sheets.</li>
+                <li>CSS is a VAST topic, and one where you can spend lots of time mastering. But, we’re not going to look at it much in the Bootcamp.
+                    We do use CSS, but we’ll work on a different <b><i>abstraction level</i></b>. Much like we’ll do next with JavaScript. Instead of building 
+                    interfaces in the browser using JavaScript directly, we’ll use React, which is an abstraction that makes our lives easier.
+                    We’ll do the same with CSS by using <b><i>Tailwind</i></b>. Tailwind is a way to apply CSS by using HTML classes.</li>
+                <li>Instead of manually writing an external or in-header style sheet, we can use the <code>class</code> attribute on HTML tags. 
+                    For example, &lt;p class="text-red-500"&gt;test&lt;/p&gt; </li>
+                <li>Note that we’ll need to load Tailwind in our project, either by loading the CSS file directly, which is fine in testing, 
+                    or using the Tailwind-specific tooling that every web app framework like Next.js provides.</li>
+                <li>Each class is tied to just one CSS instruction, usually. What we like about that is <b>we write the style in the HTML directly</b>.</li>
+                <li>The HTML can get kind of clunky, particularly when you are assigning multiple classes, but it gives us strong customizability, 
+                    directly inside the HTML. </li>
+                <li>And one of the main benefits is the maintainability. The HTML directly describes the presentation, which is great with 
+                    components-based UI layouts design, which is what we’ll focus on for the entire bootcamp.</li>
+                <li>Link to <a href="https://tailwindcss.com/docs"> Tailwind Documentation</a></li>
+                <li>Link to <a href="https://play.tailwindcss.com/x5Frc50Ii5">Tailwind Play</a></li>
+            </ul>
+            <h3>Installing Tailwind CSS</h3>
+                <ul>
+                    <li>I updated my Node.js to version 16.14.2. </li>
+                    <li>YouTube turorial for installing Tailwind CSS <a href="https://www.youtube.com/watch?v=bxmDnn7lrnk"> here. </a></li>
+                    <li>As I understand it right now, you need to run your build script each time you change either of your <code>input_styles.css
+                    </code> file or your <code>tailwind.config.js</code> file.  </li>
+                </ul>
+                <h4 class="font-bold"> Misc Notes about Tailwind (installing, configuring, linking, etc.): </h4>
+                <ul class="list-decimal">
+                    <li>I initialized a node project, <code >npm init -y</code>, and also installed tailwind in the highest parent folder 
+                        for the bootcamp: 5._2022Full-Stack-Web-Dev-Bootcamp, so the node modules folder which holds the package.json,
+                        is in the highest parent folder for all other folders and files for the bootcamp. </li>
+                    <li>What is package.json? </li>
+                        <ul class="list-disc">
+                            <li>Tutorial <a href="https://heynode.com/tutorial/what-packagejson/#:~:text=Recap-,The%20package.,entry%20point%20to%20our%20package."> here.</a></li>
+                            <li>Your project's package.json is the central place to configure and describe how to interact with and run your application. It is used by 
+                                the npm CLI (and yarn) to identify your project and understand how to handle the project's dependencies. It's the package.json file that 
+                                enables npm to start your project, run scripts, install dependencies, publish to the NPM registry, and many other useful tasks. The npm 
+                                CLI is also the best way to manage your package.json because it helps generate and update your package.json file throughout a project's life.</li>
+                            <li>Your project also must include a package.json before any packages can be installed from NPM. This is probably the top reason why you 
+                                need one in your project.</li>
+                        </ul>
+                    <li>Link for configuring content <a href="https://tailwindcss.com/docs/content-configuration"> Here</a></li>
+                    <li>Intellisense wasn't working at first, but if you type into the <code>class=""</code> attribute inside an element, 
+                        it does pick up on it. </li>
+                </ul>
+                <h4>First implementation of Tailwind</h4>
+                <button class="block text-white bg-green-500 px-5 py-3 mx-auto mt-10 font-bold uppercase">First styled button</button>
+                <p>Note that Tailwind will always strip down the basic css, and remove any HTML styling, and set it a default basic look. Then you can apply the tailwind 
+                    classes to style it. So until you have added CSS styling, it will always be very basic, stripped down styling, even if you have a lot of html 
+                    layout styling (list items, bold, h1, etc.).</p>
+                <div>
+                    <p class="text-7xl font-bold">text-7xl bold</p>
+                </div>
+                <p> This isn't fully working because: The way that Tailwind works is that it has an input styles sheet, which pulls from all Tailwind utilities, and then an 
+                    output styles sheet, which is COMPLILED BASED ON THE CLASSES INSIDE OF YOUR HTML FILE. But it will not pick up on new classes until 
+                    you run <code>npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch</code> )make sure your file paths are specific to how you have structured 
+                    and named your files), where the "--watch" is VERY important, because it will keep you 
+                    from having to go back and run your build command every single time you add a new class to your html file, and it will "Watch" for new classes and 
+                    update the output style sheet as needed based on the classes in the file. 
+                </p>
+                <p>The reason that tailwind only compiles from the existing classes that are actually being used is to keep the output CSS file as minimal as possible,
+                    rather than having like 20k lines or something crazy.
+                </p>
+                <p> I didn't understand this process until I got to the lesson on Deploying Static Sites on Netlify, where Flavio gave a walk-through 
+                    of different ways to incorporate Tailwind, and I realized I was missing the <code>--watch</code> element that instructs tailwind to 
+                    constantly scan my files to apply any new classes that are used. See the clip: "constant_scanning_by_tailwind". The 
+                    constant Rebuilding in the terminal is reflecting the fact that the output_styles.css file is constantly being rebuilt
+                    anytime there is a pause in my typing. 
+                </p>
+                <p>Before running this line of code, only some of the styles were being applied, and those were the ones that were already in my file 
+                    before I ran the original build command. But any styles that came after that didn't get applied. 
+                </p>
+                <p>So I'm hoping that formatting will work after I run the above code. </p> 
+        <h2 class="text-3xl font-bold">Deploying Static Sites on Netlify</h2>
+                <p>Netflify is a site hosting platform. It can host static files (which means HTML files, like we're going to do now) and it can also let you use tools 
+                    called static site generators (think Hugo, Gatsby..). It also provides serverless functions. </p>
+                    
+
+
+
+        <h2>Miscellaneous Notes</h2>
+            <h3>Taking Notes in HTML and Producing Literal Code Output</h3>
+                <h4>Creating nested (cascading) lists in HTML:</h4>
+                    <p>Inside of an unordered list, <code>&lt;ul&gt;</code>, you will naturally have list items, 
+                        <code>&lt;li&gt;</code>. But you can then add another unordered list inside of any of your 
+                        list items, like so:</p>
+                    <!-- First unordered list -->
+                    <p> <code> &lt;ul&gt;</code></p>
+                    <ul>
+                        <li><code>&lt;li&gt; list item one &lt;/li&gt;</code></li>
+                        <li><code>&lt;li&gt; list item two with subitems:</code>
+                            <!-- Second unordered List  -->
+                            <ul> 
+                                <p><code>&lt;ul&gt; ul 2:</code> </p>
+                                <li><code>&lt;li&gt; Subitem 1</code></li>
+                                <li><code>&lt;li&gt; Subitem 2</code></li>
+                                <p><code> &lt;/ul&gt;</code></p>
+                            </ul> 
+                        </li> 
+                        <p><code> &lt;/li&gt;</code> </p>
+                    </ul>
+                    <p> <code> &lt;/ul&gt;</code> </p>
+                <h4>To display literal HTML code in the webpage:</h4>
+                    <h5>Writing tags: </h5>
+                        <ul>
+                            <li>First, type "&amp;amp;" instead of just "&" at the beginning of entities and symbol code.
+                                (note that this line uses "&amp;amp;" before each "&amp;amp;" in the actual code so that
+                                the second "amp;" will actually show up literally :D ) </li>
+                            <li>We want to type: "&amp;lt;" for the opening < tag,</li>
+                            <li>And we want to type:  "&amp;gt;" for the closing > tag.</li> 
+                            <li>And then we want to wrap it all in &lt; code &gt; tags 
+                                so that we get a code-style formatting for our output, like so: <code>&lt;body&gt;</code>
+                            </li>
+                        </ul>
+                        <h6>Writing Tags - Examples: </h6>
+                        <ul>
+                            <li>So, if we want to write a span tag that shows up literally, we can write "&amp;lt; span &amp;gt;".
+                                (Note again that we used "&amp;amp;" before the "lt;" and "gt;" so this would show literally. 
+                                Without the extra preceding "amp;" before the lt; and gt;, and wrapped in our &lt; code &gt; tags, we'd get our desired output of: <code>&lt;span&gt;</code>)
+                            </li>
+                            <li> And another example:  "&amp;lt;a href="https://flaviocopes.com" &amp;gt; Click Here &amp;lt;/a&amp;gt;" (literal) 
+                                produces:
+                                <br>
+                                <code>&lt;a href="https://flaviocopes.com" &gt; Click Here &lt;/a&gt;</code>  &nbsp;&nbsp;&nbsp;&nbsp; (desired output - preceding "amp;"s removed).
+                                 
+                            </li>   
+                        </ul>
+                        <p>  </p>
+                    <h5>Creating Spaces in HTML display: </h5>
+                    <ul>
+                        <li>Type: <code>"&amp;nbsp;" </code>wherever you need an extra space </li>
+                        <li> So, "&amp;lt;a href="#"&amp;gt; test &amp;lt;/a&amp;gt;" produces: &nbsp;&nbsp;   <code>&lt;a href="#"&gt; test &lt;/a&gt;</code>
+                        </li>
+                        <li> NOTE: you can test this by copying the literals in these notes (from this web output, not the .html file), 
+                            and pasting them into your .html file, and seeing if the output is the same as the existing one in the web output.
+                        </li>
+                    </ul>
+                    
+                  
+                    
+                
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "5._2022full-stack-web-dev-bootcamp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-tailwind-css": "tailwindcss build -i src/input_styles.css -o 1.BootcampLessonNotes/output_styles.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^3.0.23"
+  }
+}
