@@ -8,21 +8,127 @@
     <link rel="icon" type="image/png" sizes="32x32" href="Clips/web_development_icon.png" />
     <title>Week 2 Notes</title>
 </head>
-<body>
+<body class="ml-2">
     <h1 class="mt-2 text-3xl mb-2 font-extrabold tracking-tight text-gray-900">
         Week 2 Notes
     </h1>
-    <p>The first things to note are: Links included in header to set up Tailwind, and Any commands to run to 
-        to active Tailwind on a new file. 
-    </p>
-    <ul>
-        <li>1. links</li>
-        <li>2. configure content: add file path to tailwin.config.js file</li>
-        <li>3. may or may not need to run the npx command: "npx tailwindcss -i .src/input_styles.css -o ./1.BootcampLesson Notes/output_styles.css --watch"</li>
-        <li>4. have a terminal open to make sure that it is regularly rebuilding</li>
-        <li> Note: all file paths to the Tailwind CSS is similar for the Notes pages, pay attention to file structure.
-            It seems there aren't any issues in linking to the same output css file from multiple HTML files.  </li>
-    </ul>
+    <h2 class="mt-2 text-xl mb-2 font-bold text-gray-900">Preliminary Notes</h2>
+        <h3 class="mt-1 text-lg mb-1 font-semibold text-gray-900">Tailwind Setup and Activation</h3>
+            <ul class="mx-6 list-disc">
+                <li>The first things to note are: Make sure you have the necessary links included in the header
+                    of your .html file to link to your up Tailwind stylesheets, and make sure you run any commands 
+                    necessary to activate your Tailwind watching/updating. </li>
+                    <ul class="mx-12 list-decimal">
+                        <li> &nbsp; &nbsp;  Links in Header of .html file</li>
+                        <li> &nbsp; &nbsp;  Configure content: add file path to tailwin.config.js file</li>
+                        <li> &nbsp; &nbsp;  May or may not need to run the npx command in the terminal for the highest parent folder: "npx tailwindcss -i ./src/input_styles.css -o ./1.BootcampLessonNotes/output_styles.css --watch"</li>
+                        <li> &nbsp; &nbsp;  Have a terminal open to make sure that it is regularly "Rebuilding"</li>
+                        <li> &nbsp; &nbsp;  Note: All file paths to the Tailwind CSS is similar for the Notes pages, pay attention to file structure.
+                            It seems there aren't any issues in linking to the same output css file from multiple HTML files.  </li>
+                    </ul>
+            </ul>
+        <h3 class="mt-1 text-lg mb-1 font-semibold text-gray-900">Taking Notes in Tailwind</h3>
+            <h4 class="mt-1 italic">Creating and Styling Lists</h4>
+                <ul class="mx-6 list-disc">
+                    <li>List items must have enough margin on the x-axis for the bullet point to show up. I often use 
+                        <span class="bg-gray-200 px-2 rounded-sm text-gray-900 font-mono text-sm">mx-6</span>.</li>
+                    <li>List items must be held within a <span class="bg-gray-200 px-2 rounded-sm text-gray-900 font-mono text-sm">&lt;ul&gt;</span> element. 
+                    This element is where we can specify the margin and list-style classes.</li>
+                    <li>Writing a simple <span class="bg-gray-200 px-2 rounded-sm text-gray-900 font-mono text-sm">&lt;p&gt;</span>
+                    element and specifying class as <span class="bg-gray-200 px-2 rounded-sm text-gray-900 font-mono text-sm">list-disc</span>
+                    won't create a list.</li>
+                </ul>
+            <h4 class="mt-1 italic">Writing Literal Code</h4>
+                <ul class="mx-6 list-disc">
+                    <li>Writing literal code has some similarities, and some differences when styling with Tailwind. 
+                        For including symbols, we can still use the "&amp;lt;" and "&amp;gt;" for the brackets, but the styling 
+                        is not done using a <span class="bg-gray-200 px-2 rounded-sm text-gray-900 font-mono text-sm">&lt;code&gt;</span> element,
+                        it is done with custom Tailwind class styling. See this .html file for this style. 
+                    </li>
+                </ul>
+    
+    <h2 class="mt-2 text-xl mb-2 font-bold text-gray-900">Lesson Notes</h2>
+        <h3 class="mt-1 text-lg mb-1 font-semibold text-gray-900"> 2.1) Intro</h3>
+            <ul class="mx-6 list-disc">
+                <li>In the first introductory week of the Bootcamp we’ve learned the basics of creating HTML pages and styling them 
+                    with Tailwind. We also learned how to publish a static HTML page on Netlify.The term 'static' here is in contrast 
+                    with 'dynamic'. Dynamic pages are typically generated with the use of a database, and get their final state
+                    different depending on some data that changes. </li>
+            </ul>
+        <h3 class="mt-1 text-lg mb-1 font-semibold text-gray-900"> 2.2) Introducing Astro</h3>
+            <ul class="mx-6 list-disc">
+                <li>Astro is a "modern static site builder". it makes things very easy to work with HTML and Tailwind, and to have things with a proper 
+                    structure right from the start. </li>
+                <li>And by implementing it you start working with your first development tool, which is something you’ll get used to all the time. 
+                    As developers, one of our tasks is to always try new tools.</li>
+                <li>Astro is a <span class="italic font-semibold">tiny abstraction</span> over the HTML files we used in the last week when we wrote HTML in a .html file.</li>
+                    <div>
+                        <p class="ml-6 italic text-sm">See the Mozilla definition of "abstraction" 
+                            <a href="https://developer.mozilla.org/en-US/docs/Glossary/Abstraction" class="text-blue-600 font-semibold">here</a>.</p>
+                        <p class="ml-6 italic text-sm">Stackify article and example of abstraction <a href="https://stackify.com/oop-concept-abstraction/" class="text-blue-600 font-semibold">here</a>. </p>
+                        <p class="ml-12 italic text-sm"> <span class="text-lg font-bold">"</span>I’m a coffee addict. So, when I wake up in the morning, I go into my kitchen, switch on the coffee machine and make coffee. 
+                            Sounds familiar? Making coffee with a coffee machine is a good example of abstraction. You need to know how to use your 
+                            coffee machine to make coffee. You need to provide water and coffee beans, switch it on and select the kind of coffee you 
+                            want to get. The thing you don’t need to know is how the coffee machine is working internally to brew a fresh cup of 
+                            delicious coffee. You don’t need to know the ideal temperature of the water or the amount of ground coffee you need to use.
+                            Someone else worried about that and created a coffee machine that now acts as an abstraction and hides all these details. 
+                            You just interact with a simple interface that doesn’t require any knowledge about the internal implementation.
+                            You can use the same concept in object-oriented programming languages like Java.<span class="text-lg font-bold">"</span></p>
+                    </div>
+                <li>What we’ll do in Astro is, we’ll just write the same HTML but we’ll create 
+                    <span class="bg-gray-200 px-2 rounded-sm text-pink-700 font-mono text-sm">.astro</span> files intead of 
+                    <span class="bg-gray-200 px-2 rounded-sm text-pink-700 font-mono text-sm">.html</span> pages. </li>
+                <li class="italic font-semibold">That’s it (to start with). Just a file extension change. </li>
+                <li>In this project we’ll write multiple HTML pages in Astro. But before we can install Astro, we must install 
+                    Node.js because we need to use the npm command line tool.</li>
+            </ul>
+        <h3 class="mt-1 text-lg mb-1 font-semibold text-gray-900"> 2.3) Install Note.js On Your Computer</h3>
+            <ul class="mx-6 list-disc">
+                <li>Node.js is the way we can run JavaScript *outside of the browser*, so we can use all the fantastic tools that 
+                    are built on top of JavaScript that make our life easier as developers. Like, for example, running Astro, 
+                    Next.js, React, and much more.</li>
+                <li>I have already installed Node, so nothing needed to be done here. </li>
+            </ul>
+        <h3 class="mt-1 text-lg mb-1 font-semibold text-gray-900"> 2.4) Set up and Astro Project and create a Git repository</h3>
+            <h4 class="mt-1 italic">Node.js</h4>
+                <ul class="mx-6 list-disc">
+                    <li>Now that you have Node.js installed, you have access, among others, to the
+                        <span class="bg-gray-200 px-2 rounded-sm text-gray-900 font-mono text-sm">node</span> and 
+                        <span class="bg-gray-200 px-2 rounded-sm text-gray-900 font-mono text-sm">npm</span> commands. </li>
+                    <li><span class="bg-gray-200 px-2 rounded-sm text-gray-900 font-mono text-sm">node</span> lets you 
+                        run Javascript files.</li>
+                    <li>You can type <span class="bg-gray-200 px-2 rounded-sm text-gray-900 font-mono text-sm">node file.js</span>
+                        and the JavaScript contained in the 
+                        <span class="bg-gray-200 px-2 rounded-sm text-pink-700 font-mono text-sm">file.js</span>
+                        file will be executed. </li>
+                    <li><span class="bg-gray-200 px-2 rounded-sm text-gray-900 font-mono text-sm">npm</span> is a utility program
+                        that is used to mainly do 3 things: 
+                        <ul class="mx-12 list-decimal">
+                            <li>Initialize a project using <span class="bg-gray-200 px-2 rounded-sm text-gray-900 font-mono text-sm">npm init <...></span> </li>
+                            <li>Download and install Javascript packages, and add them to your project using
+                                <span class="bg-gray-200 px-2 rounded-sm text-gray-900 font-mono text-sm">npm install <...></span>
+                            </li>
+                            <li>Run a project using <span class="bg-gray-200 px-2 rounded-sm text-gray-900 font-mono text-sm">npm run <...></span></li>
+                        </ul>
+                    </li>
+                    <li>You’ll use this command all the time. Especially you’ll use 
+                        <span class="bg-gray-200 px-2 rounded-sm text-gray-900 font-mono text-sm">npm run dev</span> a lot, which 
+                        is the command we use to run tools like Astro or Next.js locally, for development. </li>
+                </ul>
+
+
+
+
+
+
+
+        <!-- Paragraph tags added below for having space display at the bottom of the page -->
+    <p> &nbsp; </p>
+    <p> &nbsp; </p> 
+    <p> &nbsp; </p> 
+    <p> &nbsp; </p>
+    <p> &nbsp; </p> 
+    <p> &nbsp; </p> 
 
     
 </body>
